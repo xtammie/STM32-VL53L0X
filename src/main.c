@@ -1,5 +1,4 @@
 #include "helper.h"
-#include "stm32f0_discovery.h"
 #include "singleRanging.h"
 
 int main(int argc, char **argv)
@@ -7,9 +6,6 @@ int main(int argc, char **argv)
 		VL53L0X_Error Status = VL53L0X_ERROR_NONE;
 		VL53L0X_Dev_t MyDevice;
 		VL53L0X_Dev_t *pMyDevice = &MyDevice;
-
-		STM_EVAL_LEDInit(LED3);
-		STM_EVAL_LEDInit(LED4);
 		
 		USART_Setup();
 		USART_Clearscreen();
