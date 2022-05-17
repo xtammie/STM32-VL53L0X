@@ -7,8 +7,6 @@
 
 VL53L0X_Error measure(VL53L0X_Dev_t *pMyDevice, uint8_t count);
 VL53L0X_Error initDevice(VL53L0X_Dev_t *pMyDevice);
-uint8_t calcVolumeCrate(void);
-uint16_t calcVolume(uint8_t index);
 
 #endif
 

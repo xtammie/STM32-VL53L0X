@@ -121,27 +121,3 @@ VL53L0X_Error initDevice(VL53L0X_Dev_t *pMyDevice){
 	
 		return Status;
 }
-
-//index is for later use, then we can point to each sensor oid
-uint16_t calcVolume(uint8_t index){
-	uint16_t height = 800;
-	char buf [15] = "\0";
-	uint16_t percentage = ((height-lastSensorValue)*100)/height;
-	
-	snprintf(buf, sizeof(buf), "sensor: %d\n", lastSensorValue);
-		USART_Putstr(buf);	
-	
-	return percentage;
-}
-
-uint8_t calcVolumeCrate(){
-	uint8_t filling = 0;
-	uint8_t i;
-	
-	for(i = 0; i < 4; i++){
-		filling += calcVolume(i);
-	}
-	
-	return filling/4;
-}
-
